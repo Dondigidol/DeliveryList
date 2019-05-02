@@ -4,6 +4,8 @@ import dbServices.dataSets.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -20,15 +22,22 @@ public class UsersDAO {
         session.saveOrUpdate(user);
     }
 
-    public User getUserbyId(long id) throws HibernateException{
+    public User getUserById(long id) throws HibernateException{
         return session.get(User.class, id);
     }
 
-    public List<User> getUserByName(String name, String surname) throws HibernateException{
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<User> query = builder.createQuery(User.class);
-        Root<User> root = query.from(User.class);
-        return (List<User>)query.select(root).where(builder.equal(root.get("name"), name));
+    public void getUserByName(String name, String surname) throws HibernateException{
+        EntityManager em = session.getEntityManagerFactory().createEntityManager();
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        CriteriaQuery<User> cq = cb.createQuery(User.class);
+        Root<User> root = cq.from(User.class);
+        cq.select(root);
+        List<User> users = em.createQuery(cq).getResultList();
+        for (User user: users){
+            System.out.println(user.getUserId());
+        }
+
 
     }
 

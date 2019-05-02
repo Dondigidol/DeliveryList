@@ -9,8 +9,5 @@
         <module name="DeliveryList" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="DeliveryList" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

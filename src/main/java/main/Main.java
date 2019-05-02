@@ -8,7 +8,7 @@ import dbServices.dataSets.User;
 
 public class Main {
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         DBService dbService = new DBService();
         dbService.printConnectionInfo();
 
@@ -40,7 +40,7 @@ public class Main {
         User user3 = dbService.getUserById(60031809);
         System.out.println(user3.getUserName());
 
-        System.out.println(dbService.getUserByName("Emil", "Tulbaev"));
+        dbService.getUserByName("Emil", "Tulbaev");
 
 
 

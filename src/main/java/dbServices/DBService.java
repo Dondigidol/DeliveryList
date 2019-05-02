@@ -51,7 +51,7 @@ public class DBService {
         return configuration;
     }
 
-    public SessionFactory createSessionFactory(Configuration configuration){
+    private SessionFactory createSessionFactory(Configuration configuration){
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(configuration.getProperties());
         ServiceRegistry serviceRegistry = builder.build();
@@ -111,20 +111,20 @@ public class DBService {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         UsersDAO dao = new UsersDAO(session);
-        User user = dao.getUserbyId(id);
+        User user = dao.getUserById(id);
         ts.commit();
         session.close();
         return user;
     }
 
-    public List<User> getUserByName(String name, String surname){
+    public void getUserByName(String name, String surname){
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         UsersDAO dao = new UsersDAO(session);
-        List<User> users = dao.getUserByName(name, surname);
+        dao.getUserByName(name, surname);
         ts.commit();
         session.close();
-        return users;
+        //return users;
     }
 
 
