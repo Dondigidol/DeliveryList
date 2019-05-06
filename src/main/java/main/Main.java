@@ -31,6 +31,19 @@ public class Main {
         delivery.setDeliveryCity("Челны");
         dbService.saveDelivery(delivery);
 
+        Delivery delivery2 = new Delivery();
+        delivery2.setDeliveryDate("06052019");
+        delivery2.setDeliveryOrderId("8765432");
+        delivery2.setDeliveryClient("Дунькин Иван Федорович");
+        delivery2.setDeliveryClientPrice(700.00);
+        delivery2.setDeliveryPrice(1000.00);
+        delivery2.setDeliveryCity("Елабуга");
+        delivery2.setDeliveryComment("не поднимать на этаж");
+        delivery2.setDeliveryAuthor("Горбунькова Светлана Игнатевна");
+
+        Delivery delivery3 = new Delivery();
+        delivery3.setDeliveryAuthor("улбаев");
+
         Position position = new Position("Специалист доставки");
         dbService.savePosition(position);
 
@@ -40,12 +53,11 @@ public class Main {
         City city2 = new City("Елабуга");
         dbService.saveCity(city2);
 
-        User user4 = dbService.getUserById(631809);
-        System.out.println(user4.getUserName() +" "+ user4.getUserSurname());
+        //User user4 = dbService.getUserById(60031809);
+        //System.out.println(user4.getUserName() +" "+ user4.getUserSurname());
 
-        dbService.getUserByName("Эмиль", "Тулбаев");
-
-        System.out.println(dbService.deleteUserById(60031809));
+        //dbService.getUserByName("Эмиль", "Тулбаев");
+        dbService.getDelivery(delivery3);
     }
 
 

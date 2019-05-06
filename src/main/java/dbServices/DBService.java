@@ -137,6 +137,15 @@ public class DBService {
         return isDeleted;
     }
 
+    public void getDelivery(Delivery delivery){
+        Session session = sessionFactory.openSession();
+        Transaction ts = session.beginTransaction();
+        DeliveriesDAO dao = new DeliveriesDAO(session);
+        dao.getDelivery(delivery);
+        ts.commit();
+        session.close();
+    }
+
 
 
 
