@@ -5,11 +5,11 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class UsersDAO {
     private Session session;
@@ -26,23 +26,23 @@ public class UsersDAO {
         return session.get(User.class, id);
     }
 
-    public void getUserByName(String name, String surname) throws HibernateException{
-        EntityManager em = session.getEntityManagerFactory().createEntityManager();
-        CriteriaBuilder cb = em.getCriteriaBuilder();
-
+    public List<User> getUserByName(String name, String surname) throws HibernateException{
+        CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<User> cq = cb.createQuery(User.class);
         Root<User> root = cq.from(User.class);
         cq.select(root);
-        List<User> users = em.createQuery(cq).getResultList();
-        for (User user: users){
-            System.out.println(user.getUserId());
-        }
-
-
+        cq.where(cb.and(cb.like(root.<String>get("userName"), "%" + name +"%"), cb.like(root.<String>get("userSurname"), "%" + surname + "%")));
+        List<User> users = session.createQuery(cq).getResultList();
+        return users;
     }
 
-    public void deleteUser(long id) throws HibernateException{
-
+    public boolean deleteUser(long id) throws HibernateException{
+        try {
+            session.delete(session.get(User.class, id));
+            return true;
+        } catch (Exception e){
+            return false;
+        }
     }
 
 }

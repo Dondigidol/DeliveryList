@@ -12,11 +12,14 @@ public class Main {
         DBService dbService = new DBService();
         dbService.printConnectionInfo();
 
-        User user = new User(6031809, "Emil", "Tulbaev", "IT");
+        User user = new User(6031809, "Олеся", "Фатихова", "логист");
         dbService.saveUser(user);
 
-        User user2 =  new User(60031809, "Emil", "Tulbaev", "специалист по информационным технологиям");
+        User user2 =  new User(60031809, "Эмиль", "Тулбаев", "специалист по информационным технологиям");
         dbService.saveUser(user2);
+
+        User user3 = new User(12324, "Вася", "Петров", "логист");
+        dbService.saveUser(user3);
 
         Delivery delivery = new Delivery();
         delivery.setDeliveryDate("28042019");
@@ -37,13 +40,12 @@ public class Main {
         City city2 = new City("Елабуга");
         dbService.saveCity(city2);
 
-        User user3 = dbService.getUserById(60031809);
-        System.out.println(user3.getUserName());
+        User user4 = dbService.getUserById(631809);
+        System.out.println(user4.getUserName() +" "+ user4.getUserSurname());
 
-        dbService.getUserByName("Emil", "Tulbaev");
+        dbService.getUserByName("Эмиль", "Тулбаев");
 
-
-
+        System.out.println(dbService.deleteUserById(60031809));
     }
 
 

@@ -7,10 +7,10 @@ import javax.persistence.*;
 public class City {
 
     @Id
-    @Column(name = "id", unique = true)
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long cityId;
-    @Column(name = "name", unique = true)
+    @Column(name = "name")
     private String cityName;
 
     public City(){
@@ -18,6 +18,7 @@ public class City {
     }
 
     public City(String cityName){
+        setCityId(-1);
         this.setCityName(cityName);
     }
 

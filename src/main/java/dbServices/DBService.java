@@ -117,14 +117,24 @@ public class DBService {
         return user;
     }
 
-    public void getUserByName(String name, String surname){
+    public List<User> getUserByName(String name, String surname){
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         UsersDAO dao = new UsersDAO(session);
-        dao.getUserByName(name, surname);
+        List<User> users = dao.getUserByName(name, surname);
         ts.commit();
         session.close();
-        //return users;
+        return users;
+    }
+
+    public boolean deleteUserById(long userId){
+        Session session = sessionFactory.openSession();
+        Transaction ts = session.beginTransaction();
+        UsersDAO dao = new UsersDAO(session);
+        boolean isDeleted = dao.deleteUser(userId);
+        ts.commit();
+        session.close();
+        return isDeleted;
     }
 
 
