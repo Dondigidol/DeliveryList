@@ -27,15 +27,15 @@ public class DeliveriesDAO {
         CriteriaQuery<Delivery> criteriaQuery = criteriaBuilder.createQuery(Delivery.class);
         Root<Delivery> root = criteriaQuery.from(Delivery.class);
         criteriaQuery.select(root);
-        criteriaQuery.where(criteriaBuilder.and(criteriaBuilder.like(root.<String>get("deliveryId"), "%" + delivery.getDeliveryId().toString() + "%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryDate"), "%" + delivery.getDeliveryDate() + "%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryOrderId"), "%"+delivery.getDeliveryOrderId()+ "%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryClient"), "%"+delivery.getDeliveryClient()+"%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryClientPrice"), "%" + delivery.getDeliveryClientPrice().toString() + "%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryPrice"), "%"+delivery.getDeliveryPrice().toString()+"%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryCity"), "%"+delivery.getDeliveryCity()+"%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryComment"), "%" + delivery.getDeliveryComment()+"%"),
-                                                criteriaBuilder.like(root.<String>get("deliveryAuthor"), "%" + delivery.getDeliveryAuthor() + "%")));
+        criteriaQuery.where(criteriaBuilder.and(criteriaBuilder.ge(root.<Long>get("deliveryId"), delivery.getDeliveryId()),
+                                                criteriaBuilder.like(root.<String>get("deliveryDate"), delivery.getDeliveryDate()),
+                                                criteriaBuilder.like(root.<String>get("deliveryOrderId"), delivery.getDeliveryOrderId()),
+                                                criteriaBuilder.like(root.<String>get("deliveryClient"), delivery.getDeliveryClient()),
+                                                criteriaBuilder.greaterThanOrEqualTo(root.<Double>get("deliveryClientPrice"), delivery.getDeliveryClientPrice()),
+                                                criteriaBuilder.greaterThanOrEqualTo(root.<Double>get("deliveryPrice"), delivery.getDeliveryPrice()),
+                                                criteriaBuilder.like(root.<String>get("deliveryCity"), delivery.getDeliveryCity()),
+                                                criteriaBuilder.like(root.<String>get("deliveryComment"), delivery.getDeliveryComment()),
+                                                criteriaBuilder.like(root.<String>get("deliveryAuthor"), delivery.getDeliveryAuthor())));
         List<Delivery> result = session.createQuery(criteriaQuery).getResultList();
         for(Delivery del: result){
             System.out.print(del.getDeliveryId() + " | ");
@@ -48,8 +48,6 @@ public class DeliveriesDAO {
             System.out.print(del.getDeliveryComment() + " | ");
             System.out.println(del.getDeliveryAuthor());
         }
-
-
     }
 
 }

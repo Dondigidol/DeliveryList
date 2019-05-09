@@ -25,24 +25,29 @@ public class Main {
         delivery.setDeliveryDate("28042019");
         delivery.setDeliveryOrderId("1234321");
         delivery.setDeliveryClient("Василий Пупкин Иванович");
-        delivery.setDeliveryPrice(500.00);
-        delivery.setDeliveryClientPrice(400.00);
+        delivery.setDeliveryPrice(500);
+        delivery.setDeliveryClientPrice(400);
         delivery.setDeliveryAuthor("Эмиль Тулбаев");
         delivery.setDeliveryCity("Челны");
+        delivery.setDeliveryComment("asdasdasd");
         dbService.saveDelivery(delivery);
 
         Delivery delivery2 = new Delivery();
         delivery2.setDeliveryDate("06052019");
         delivery2.setDeliveryOrderId("8765432");
         delivery2.setDeliveryClient("Дунькин Иван Федорович");
-        delivery2.setDeliveryClientPrice(700.00);
-        delivery2.setDeliveryPrice(1000.00);
+        delivery2.setDeliveryClientPrice(700);
+        delivery2.setDeliveryPrice(1000);
         delivery2.setDeliveryCity("Елабуга");
         delivery2.setDeliveryComment("не поднимать на этаж");
         delivery2.setDeliveryAuthor("Горбунькова Светлана Игнатевна");
+        dbService.saveDelivery(delivery2);
 
         Delivery delivery3 = new Delivery();
-        delivery3.setDeliveryAuthor("улбаев");
+        //delivery3.setDeliveryAuthor("баев");
+        //delivery3.setDeliveryId(1);
+        delivery3.setDeliveryPrice(40);
+        //delivery3.setDeliveryComment("asd");
 
         Position position = new Position("Специалист доставки");
         dbService.savePosition(position);

@@ -79,6 +79,14 @@ public class Delivery {
         this.deliveryPrice = deliveryPrice;
     }
 
+    public void setDeliveryPrice(Integer deliveryPrice){
+        this.deliveryPrice = deliveryPrice.doubleValue();
+    }
+
+    public void setDeliveryClientPrice(Integer deliveryClientPrice){
+        this.deliveryClientPrice = deliveryClientPrice.doubleValue();
+    }
+
     public void setDeliveryCity(String deliveryCity){
         this.deliveryCity = deliveryCity;
     }
@@ -126,6 +134,35 @@ public class Delivery {
     public String getDeliveryAuthor(){
         return deliveryAuthor;
     }
+
+    @Override
+    public String toString(){
+        return "Delivery{" +
+                "id = " + deliveryId +
+                ", date = " + deliveryDate +
+                ", orderId = " + deliveryOrderId +
+                ", client = " + deliveryClient +
+                ", clientPrice = " + deliveryClientPrice +
+                ", price = " + deliveryPrice +
+                ", city = " + deliveryCity +
+                ", comment = " + deliveryComment +
+                ", author = " + deliveryAuthor +
+                "}";
+    }
+
+    public void prepareSearch(){
+        if(getDeliveryId()==null) setDeliveryId(-1);
+        if(getDeliveryDate()==null) setDeliveryDate("%"); else setDeliveryDate("%" + getDeliveryDate() + "%");
+        if(getDeliveryClient()==null) setDeliveryClient("%"); else setDeliveryClient("%" + getDeliveryClient() + "%");
+        if(getDeliveryOrderId()==null) setDeliveryOrderId("%"); else setDeliveryOrderId("%" + getDeliveryOrderId() + "%");
+        if(getDeliveryCity()==null) setDeliveryCity("%"); else setDeliveryCity("%" + getDeliveryCity() + "%");
+        if(getDeliveryComment()==null) setDeliveryComment("%"); else setDeliveryComment("%" + getDeliveryComment() + "%");
+        if(getDeliveryAuthor()==null) setDeliveryAuthor("%"); else setDeliveryAuthor("%" + getDeliveryAuthor() + "%");
+        if(getDeliveryClientPrice()==null) setDeliveryClientPrice(-1);
+        if(getDeliveryPrice()==null) setDeliveryPrice(-1);
+    }
+
+
 
 
 

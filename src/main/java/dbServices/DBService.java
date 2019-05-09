@@ -141,10 +141,15 @@ public class DBService {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         DeliveriesDAO dao = new DeliveriesDAO(session);
+        System.out.println(delivery);
+        delivery.prepareSearch();
+        System.out.println(delivery);
         dao.getDelivery(delivery);
         ts.commit();
         session.close();
     }
+
+
 
 
 
