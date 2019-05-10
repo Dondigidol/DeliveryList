@@ -43,6 +43,13 @@ public class City {
         return cityName;
     }
 
+    @Override
+    public String toString(){
+        return "City{" +
+                "id = " + cityId +
+                ", name = " + cityName +
+                "}";
+    }
 
 
 }

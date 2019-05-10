@@ -22,11 +22,12 @@ public class DeliveriesDAO {
         session.saveOrUpdate(delivery);
     }
 
-    public void getDelivery(Delivery delivery) throws HibernateException{
+    public List<Delivery> getDelivery(Delivery delivery) throws HibernateException{
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<Delivery> criteriaQuery = criteriaBuilder.createQuery(Delivery.class);
         Root<Delivery> root = criteriaQuery.from(Delivery.class);
         criteriaQuery.select(root);
+
         criteriaQuery.where(criteriaBuilder.and(criteriaBuilder.ge(root.<Long>get("deliveryId"), delivery.getDeliveryId()),
                                                 criteriaBuilder.like(root.<String>get("deliveryDate"), delivery.getDeliveryDate()),
                                                 criteriaBuilder.like(root.<String>get("deliveryOrderId"), delivery.getDeliveryOrderId()),
@@ -37,17 +38,8 @@ public class DeliveriesDAO {
                                                 criteriaBuilder.like(root.<String>get("deliveryComment"), delivery.getDeliveryComment()),
                                                 criteriaBuilder.like(root.<String>get("deliveryAuthor"), delivery.getDeliveryAuthor())));
         List<Delivery> result = session.createQuery(criteriaQuery).getResultList();
-        for(Delivery del: result){
-            System.out.print(del.getDeliveryId() + " | ");
-            System.out.print(del.getDeliveryDate() + " | ");
-            System.out.print(del.getDeliveryOrderId()+ " | ");
-            System.out.print(del.getDeliveryClient() + " | ");
-            System.out.print(del.getDeliveryClientPrice() + " | ");
-            System.out.print(del.getDeliveryPrice() + " | ");
-            System.out.print(del.getDeliveryCity() + " | ");
-            System.out.print(del.getDeliveryComment() + " | ");
-            System.out.println(del.getDeliveryAuthor());
-        }
+
+        return result;
     }
 
 }

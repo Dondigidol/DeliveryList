@@ -158,8 +158,8 @@ public class Delivery {
         if(getDeliveryCity()==null) setDeliveryCity("%"); else setDeliveryCity("%" + getDeliveryCity() + "%");
         if(getDeliveryComment()==null) setDeliveryComment("%"); else setDeliveryComment("%" + getDeliveryComment() + "%");
         if(getDeliveryAuthor()==null) setDeliveryAuthor("%"); else setDeliveryAuthor("%" + getDeliveryAuthor() + "%");
-        if(getDeliveryClientPrice()==null) setDeliveryClientPrice(-1);
-        if(getDeliveryPrice()==null) setDeliveryPrice(-1);
+        if(getDeliveryClientPrice()==null) setDeliveryClientPrice(0);
+        if(getDeliveryPrice()==null) setDeliveryPrice(0);
     }
 
 

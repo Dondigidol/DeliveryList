@@ -22,7 +22,7 @@ public class CitiesDAO {
         session.save(city);
     }
 
-    public List<City> getCityByName(String cityName) throws HibernateException{
+    public List<City> getCity(String cityName) throws HibernateException{
         CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
         CriteriaQuery<City> criteriaQuery = criteriaBuilder.createQuery(City.class);
         Root<City> root = criteriaQuery.from(City.class);
@@ -44,7 +44,6 @@ public class CitiesDAO {
             e.printStackTrace();
             return false;
         }
-
     }
 
 

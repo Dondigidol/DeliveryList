@@ -137,16 +137,55 @@ public class DBService {
         return isDeleted;
     }
 
-    public void getDelivery(Delivery delivery){
+    public List<Delivery> getDelivery(Delivery delivery){
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         DeliveriesDAO dao = new DeliveriesDAO(session);
         System.out.println(delivery);
         delivery.prepareSearch();
         System.out.println(delivery);
-        dao.getDelivery(delivery);
+        List<Delivery> deliveries = dao.getDelivery(delivery);
         ts.commit();
         session.close();
+        return deliveries;
+    }
+
+    public List<Position> getPosition(String positionName){
+        Session session = sessionFactory.openSession();
+        Transaction ts = session.beginTransaction();
+        PositionsDAO dao = new PositionsDAO(session);
+        List<Position> result= dao.getPosition(positionName);
+        ts.commit();
+        session.close();
+        return result;
+    }
+
+    public List<Position> getPosition(){
+        return getPosition("");
+    }
+
+    public List<City> getCity(String cityName){
+        Session session = sessionFactory.openSession();
+        Transaction ts = session.beginTransaction();
+        CitiesDAO dao = new CitiesDAO(session);
+        List<City> result = dao.getCity(cityName);
+        ts.commit();
+        session.close();
+        return result;
+    }
+
+    public List<City> getCity(){
+        return getCity("");
+    }
+
+    public List<User> getUserByPosition(String positionName){
+        Session session = sessionFactory.openSession();
+        Transaction ts = session.beginTransaction();
+        UsersDAO dao = new UsersDAO(session);
+        List<User> users = dao.getUserByPosition(positionName);
+        ts.commit();
+        session.close();
+        return users;
     }
 
 

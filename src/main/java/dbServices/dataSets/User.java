@@ -65,6 +65,16 @@ public class User {
         return userPosition;
     }
 
+    @Override
+    public String toString(){
+        return "User{" +
+                "id = " + userId +
+                ", name = "+ userName +
+                ", surname = " + userSurname +
+                ", position = " + userPosition +
+                "}";
+    }
+
 
 
 

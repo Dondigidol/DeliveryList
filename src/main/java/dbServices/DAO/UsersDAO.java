@@ -36,6 +36,16 @@ public class UsersDAO {
         return users;
     }
 
+    public List<User> getUserByPosition(String positionName) throws HibernateException{
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
+        Root<User> root = criteriaQuery.from(User.class);
+        criteriaQuery.select(root);
+        criteriaQuery.where(criteriaBuilder.like(root.<String>get("userPosition"), "%" + positionName + "%"));
+        List<User> users = session.createQuery(criteriaQuery).getResultList();
+        return users;
+    }
+
     public boolean deleteUser(long id) throws HibernateException{
         try {
             session.delete(session.get(User.class, id));
@@ -44,5 +54,7 @@ public class UsersDAO {
             return false;
         }
     }
+
+
 
 }

@@ -6,63 +6,61 @@ import dbServices.dataSets.Delivery;
 import dbServices.dataSets.Position;
 import dbServices.dataSets.User;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args){
         DBService dbService = new DBService();
         dbService.printConnectionInfo();
 
-        User user = new User(6031809, "Олеся", "Фатихова", "логист");
-        dbService.saveUser(user);
+        for (int i=1; i<10; i++){
+            User user = new User();
+            user.setUserId(i);
+            user.setUserName("Имя 1");
+            user.setUserSurname("Фамилия 1");
+            user.setUserPosition("Должность 1");
+            dbService.saveUser(user);
 
-        User user2 =  new User(60031809, "Эмиль", "Тулбаев", "специалист по информационным технологиям");
-        dbService.saveUser(user2);
+            Delivery delivery = new Delivery();
+            delivery.setDeliveryDate("010" + i + "2019");
+            delivery.setDeliveryOrderId("Order" + i);
+            delivery.setDeliveryClient("Client"+ i);
+            delivery.setDeliveryClientPrice(i * 50);
+            delivery.setDeliveryPrice(i*70);
+            delivery.setDeliveryCity("City " + i);
+            delivery.setDeliveryAuthor("Author " + i);
+            delivery.setDeliveryComment("Comment " + i);
+            dbService.saveDelivery(delivery);
 
-        User user3 = new User(12324, "Вася", "Петров", "логист");
-        dbService.saveUser(user3);
+            Position position = new Position();
+            position.setPositionName("Position " + i);
+            dbService.savePosition(position);
 
-        Delivery delivery = new Delivery();
-        delivery.setDeliveryDate("28042019");
-        delivery.setDeliveryOrderId("1234321");
-        delivery.setDeliveryClient("Василий Пупкин Иванович");
-        delivery.setDeliveryPrice(500);
-        delivery.setDeliveryClientPrice(400);
-        delivery.setDeliveryAuthor("Эмиль Тулбаев");
-        delivery.setDeliveryCity("Челны");
-        delivery.setDeliveryComment("asdasdasd");
-        dbService.saveDelivery(delivery);
-
-        Delivery delivery2 = new Delivery();
-        delivery2.setDeliveryDate("06052019");
-        delivery2.setDeliveryOrderId("8765432");
-        delivery2.setDeliveryClient("Дунькин Иван Федорович");
-        delivery2.setDeliveryClientPrice(700);
-        delivery2.setDeliveryPrice(1000);
-        delivery2.setDeliveryCity("Елабуга");
-        delivery2.setDeliveryComment("не поднимать на этаж");
-        delivery2.setDeliveryAuthor("Горбунькова Светлана Игнатевна");
-        dbService.saveDelivery(delivery2);
+            City city = new City();
+            city.setCityName("City " + i);
+            dbService.saveCity(city);
+        }
 
         Delivery delivery3 = new Delivery();
-        //delivery3.setDeliveryAuthor("баев");
-        //delivery3.setDeliveryId(1);
-        delivery3.setDeliveryPrice(40);
-        //delivery3.setDeliveryComment("asd");
+        //delivery3.setDeliveryPrice(500);
+        //delivery3.setDeliveryAuthor("8");
+        List<Delivery> deliveries = dbService.getDelivery(delivery3);
+        for (Delivery delivery: deliveries){
+            System.out.println(delivery.toString());
+        }
 
-        Position position = new Position("Специалист доставки");
-        dbService.savePosition(position);
+        List<Position> positions = dbService.getPosition();
+        for (Position position: positions){
+            System.out.println(position.toString());
+        }
 
-        City city = new City("Набережные Челны");
-        dbService.saveCity(city);
+        List<City> cities = dbService.getCity();
+        for(City city: cities){
+            System.out.println(city.toString());
+        }
 
-        City city2 = new City("Елабуга");
-        dbService.saveCity(city2);
 
-        //User user4 = dbService.getUserById(60031809);
-        //System.out.println(user4.getUserName() +" "+ user4.getUserSurname());
-
-        //dbService.getUserByName("Эмиль", "Тулбаев");
-        dbService.getDelivery(delivery3);
     }
 
 

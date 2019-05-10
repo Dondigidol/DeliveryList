@@ -43,4 +43,12 @@ public class Position {
         return positionName;
     }
 
+    @Override
+    public String toString(){
+        return "Position{" +
+                "id = " + positionId +
+                ", name = " + positionName +
+                "}";
+    }
+
 }
