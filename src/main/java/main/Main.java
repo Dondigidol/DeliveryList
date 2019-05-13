@@ -5,6 +5,7 @@ import dbServices.dataSets.City;
 import dbServices.dataSets.Delivery;
 import dbServices.dataSets.Position;
 import dbServices.dataSets.User;
+import services.ADService;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class Main {
         for (int i=1; i<10; i++){
             User user = new User();
             user.setUserId(i);
+            user.setLogin("Login" + i);
             user.setUserName("Имя 1");
             user.setUserSurname("Фамилия 1");
             user.setUserPosition("Должность 1");
@@ -42,9 +44,7 @@ public class Main {
             dbService.saveCity(city);
         }
 
-        Delivery delivery3 = new Delivery();
-        //delivery3.setDeliveryPrice(500);
-        //delivery3.setDeliveryAuthor("8");
+       /* Delivery delivery3 = new Delivery();
         List<Delivery> deliveries = dbService.getDelivery(delivery3);
         for (Delivery delivery: deliveries){
             System.out.println(delivery.toString());
@@ -58,7 +58,12 @@ public class Main {
         List<City> cities = dbService.getCity();
         for(City city: cities){
             System.out.println(city.toString());
-        }
+        }*/
+
+        //ADService adService = new ADService("60031809", "Passwd186");
+        //System.out.println(adService.getUserInfo().toString());
+
+
 
 
     }
