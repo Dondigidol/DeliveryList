@@ -5,13 +5,17 @@ import dbServices.dataSets.City;
 import dbServices.dataSets.Delivery;
 import dbServices.dataSets.Position;
 import dbServices.dataSets.User;
-import services.ADService;
-
-import java.util.List;
+import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.handler.HandlerList;
+import org.eclipse.jetty.server.handler.ResourceHandler;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import servlets.LoginServlet;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         DBService dbService = new DBService();
         dbService.printConnectionInfo();
 
@@ -60,8 +64,25 @@ public class Main {
             System.out.println(city.toString());
         }*/
 
-        //ADService adService = new ADService("60031809", "Passwd186");
-        //System.out.println(adService.getUserInfo().toString());
+/*        ADService adService = new ADService("60031809", "Paswd186");
+        System.out.println(adService.getUserInfo().toString());*/
+
+        ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
+
+        contextHandler.addServlet(new ServletHolder(new LoginServlet(dbService)), "/signin.html");
+
+        ResourceHandler resourceHandler = new ResourceHandler();
+        resourceHandler.setResourceBase("public_html");
+
+        HandlerList handlerList = new HandlerList();
+        handlerList.setHandlers(new Handler[]{contextHandler, resourceHandler});
+
+        Server server = new Server (8080);
+        server.setHandler(handlerList);
+
+        server.start();
+        server.join();
+
 
 
 

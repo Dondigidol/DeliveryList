@@ -32,7 +32,7 @@ public class ADService {
             ldapEnv.put(Context.SECURITY_PRINCIPAL, "ru1000\\" + login); //"CN=ru1000\\it001.mag039,OU=Shops,OU=Leroy Merlin Vostok,DC=hq,DC=ru,DC=corp,DC=leroymerlin,DC=com");
             ldapEnv.put(Context.SECURITY_CREDENTIALS, password);
             ldapContext = new InitialDirContext(ldapEnv);
-        } catch (NamingException e){
+        } catch (Exception e){
            e.getLocalizedMessage();
         }
     }
