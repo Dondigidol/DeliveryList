@@ -75,12 +75,13 @@ public class Main {
         resourceHandler.setResourceBase("public_html");
 
         HandlerList handlerList = new HandlerList();
-        handlerList.setHandlers(new Handler[]{contextHandler, resourceHandler});
+        handlerList.setHandlers(new Handler[]{resourceHandler, contextHandler});
 
         Server server = new Server (8080);
         server.setHandler(handlerList);
 
         server.start();
+        System.out.println("Server started!");
         server.join();
 
 

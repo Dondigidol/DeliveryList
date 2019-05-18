@@ -37,28 +37,34 @@ public class ADService {
         }
     }
 
+    public boolean checkConnection(){
+        if (ldapContext == null) return false; else return true;
+    }
+
     public User getUserInfo(){
         User user = new User();
-        try{
-            SearchControls searchControls = new SearchControls();
-            String returnedAtts[]={"samAccountName", "givenName", "sn", "title"};
-            searchControls.setReturningAttributes(returnedAtts);
-            searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
+        if (checkConnection()){
+            try{
+                SearchControls searchControls = new SearchControls();
+                String returnedAtts[]={"samAccountName", "givenName", "sn", "title"};
+                searchControls.setReturningAttributes(returnedAtts);
+                searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
 
-            String searchFilter = "(&(samAccountName=" + login + "))";
-            String searchBase = "ou=Shops,ou=Leroy Merlin Vostok,dc=hq,dc=ru,dc=corp,dc=leroymerlin,dc=com";
-            int totalResults= 0;
-            NamingEnumeration<SearchResult> answer = ldapContext.search(searchBase, searchFilter, searchControls);
+                String searchFilter = "(&(samAccountName=" + login + "))";
+                String searchBase = "ou=Shops,ou=Leroy Merlin Vostok,dc=hq,dc=ru,dc=corp,dc=leroymerlin,dc=com";
+                int totalResults= 0;
+                NamingEnumeration<SearchResult> answer = ldapContext.search(searchBase, searchFilter, searchControls);
 
-            if (answer.hasMoreElements()){
-                SearchResult sr = answer.next();
-                user.setLogin(sr.getAttributes().get("samaccountname").get(0).toString());
-                user.setUserName(sr.getAttributes().get("givenName").get(0).toString());
-                user.setUserSurname(sr.getAttributes().get("sn").get(0).toString());
-                user.setUserPosition(sr.getAttributes().get("title").get(0).toString());
+                if (answer.hasMoreElements()){
+                    SearchResult sr = answer.next();
+                    user.setLogin(sr.getAttributes().get("samaccountname").get(0).toString());
+                    user.setUserName(sr.getAttributes().get("givenName").get(0).toString());
+                    user.setUserSurname(sr.getAttributes().get("sn").get(0).toString());
+                    user.setUserPosition(sr.getAttributes().get("title").get(0).toString());
+                }
+            } catch (NamingException e){
+                e.getLocalizedMessage();
             }
-        } catch (NamingException e){
-            e.getLocalizedMessage();
         }
         return user;
 
