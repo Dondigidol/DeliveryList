@@ -1,10 +1,11 @@
 package main;
 
-import dbServices.DBService;
+import dbServices.DBServiceImpl;
 import dbServices.dataSets.City;
 import dbServices.dataSets.Delivery;
 import dbServices.dataSets.Position;
 import dbServices.dataSets.User;
+import interfaces.DBService;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
@@ -16,7 +17,7 @@ import servlets.LoginServlet;
 public class Main {
 
     public static void main(String[] args) throws Exception{
-        DBService dbService = new DBService();
+        DBService dbService = new DBServiceImpl();
         dbService.printConnectionInfo();
 
         for (int i=1; i<10; i++){
@@ -47,26 +48,6 @@ public class Main {
             city.setCityName("City " + i);
             dbService.saveCity(city);
         }
-
-       /* Delivery delivery3 = new Delivery();
-        List<Delivery> deliveries = dbService.getDelivery(delivery3);
-        for (Delivery delivery: deliveries){
-            System.out.println(delivery.toString());
-        }
-
-        List<Position> positions = dbService.getPosition();
-        for (Position position: positions){
-            System.out.println(position.toString());
-        }
-
-        List<City> cities = dbService.getCity();
-        for(City city: cities){
-            System.out.println(city.toString());
-        }*/
-
-/*        ADService adService = new ADService("60031809", "Paswd186");
-        System.out.println(adService.getUserInfo().toString());*/
-
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
         contextHandler.addServlet(new ServletHolder(new LoginServlet(dbService)), "/signin.html");
@@ -83,13 +64,5 @@ public class Main {
         server.start();
         System.out.println("Server started!");
         server.join();
-
-
-
-
-
     }
-
-
-
 }

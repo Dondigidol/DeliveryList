@@ -8,6 +8,7 @@ import dbServices.dataSets.City;
 import dbServices.dataSets.Delivery;
 import dbServices.dataSets.Position;
 import dbServices.dataSets.User;
+import interfaces.DBService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -20,13 +21,13 @@ import java.sql.Connection;
 import java.util.List;
 
 
-public class DBService {
+public class DBServiceImpl implements DBService {
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "create";
 
     private final SessionFactory sessionFactory;
 
-    public DBService(){
+    public DBServiceImpl(){
         Configuration configuration = getMySqlConfiguration();
         sessionFactory = createSessionFactory(configuration);
 //        Session session = sessionFactory.openSession();
@@ -65,7 +66,7 @@ public class DBService {
             System.out.println("DB name: " + connection.getMetaData().getDatabaseProductName());
             System.out.println("DB version: " + connection.getMetaData().getDatabaseProductVersion());
             System.out.println("Driver: " + connection.getMetaData().getDriverVersion());
-            System.out.print("Autocommit: " + connection.getAutoCommit());
+            System.out.println("Autocommit: " + connection.getAutoCommit());
         } catch (Exception e){
             e.printStackTrace();
         }

@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e621c42-68ba-4a58-ac0b-c6e34e9c523e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public_html/signin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/DBService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbServices/DAO/UsersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbServices/DAO/UsersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbServices/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbServices/DBServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dbServices/dataSets/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dbServices/dataSets/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/ADService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ADService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/public_html/signin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dbServices/DBService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,57 +26,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="71" column="95" selection-start-line="71" selection-start-column="83" selection-end-line="71" selection-end-column="95" />
+            <state relative-caret-position="238">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/signin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DBServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#381#382#0" expanded="true" />
-                <element signature="e#423#424#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/ADService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1488#1489#0" expanded="true" />
-                <element signature="e#1559#1560#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="476">
+              <caret line="64" column="58" lean-forward="true" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -84,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,18 +72,20 @@
         <option value="$PROJECT_DIR$/src/main/java/dbServices/dataSets/City.java" />
         <option value="$PROJECT_DIR$/src/main/java/dbServices/DAO/CitiesDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/dbServices/DBService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dbServices/DAO/UsersDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/dbServices/DAO/PositionsDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dbServices/dataSets/User.java" />
         <option value="$PROJECT_DIR$/src/public_html/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/public_html/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/public_html/signin.html" />
         <option value="$PROJECT_DIR$/public_html/signin" />
-        <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/ADService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/public_html/signin.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaces/DBService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dbServices/DAO/UsersDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dbServices/dataSets/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dbServices/DBServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -131,10 +98,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2" />
     <option name="y" value="18" />
-    <option name="width" value="1903" />
-    <option name="height" value="972" />
+    <option name="width" value="2286" />
+    <option name="height" value="1169" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -144,7 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,6 +146,40 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dbServices" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DeliveryList" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dbServices" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DeliveryList" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dbServices" type="462c0819:PsiDirectoryNode" />
+              <item name="dataSets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DeliveryList" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DeliveryList" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -191,11 +190,109 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="servlets" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DeliveryList" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DeliveryList" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="DeliveryList" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DeliveryList" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DeliveryList" type="616d4139:PackageViewModuleNode" />
+              <item name="dbServices" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DeliveryList" type="616d4139:PackageViewModuleNode" />
+              <item name="dbServices" type="1f31426a:PackageElementNode" />
+              <item name="DAO" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DeliveryList" type="616d4139:PackageViewModuleNode" />
+              <item name="dbServices" type="1f31426a:PackageElementNode" />
+              <item name="dataSets" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DeliveryList" type="616d4139:PackageViewModuleNode" />
+              <item name="main" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DeliveryList" type="616d4139:PackageViewModuleNode" />
+              <item name="services" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="58d84e3e:PackageViewProjectNode" />
+              <item name="DeliveryList" type="616d4139:PackageViewModuleNode" />
+              <item name="servlets" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Changed Files'; set:Changed Files; ALL; class com.intellij.packageDependencies.ChangeListScope">
+          <expand>
+            <path>
+              <item name="DeliveryList" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="DeliveryList" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="DeliveryList" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\Projects\DeliveryList" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\Projects\DeliveryList" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public_html" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\Projects\DeliveryList" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\Projects\DeliveryList" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\Projects\DeliveryList" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="DeliveryList" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="D:\Projects\DeliveryList" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="servlets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557853232990</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="some bug fixies">
+      <created>1558198682705</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558198682705</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -318,10 +422,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1390" height="747" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27477476" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1951417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" weight="0.32955465" />
@@ -329,15 +432,15 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.496997" visible="true" weight="0.25980392" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.496997" visible="true" weight="0.25932506" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39786857" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3285968" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.503003" side_tool="true" weight="0.25980392" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32843137" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4984985" weight="0.32843137" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4984985" weight="0.3268206" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -392,7 +495,8 @@
     <MESSAGE value="added save and get methods to all main classes" />
     <MESSAGE value="added Ldap working class" />
     <MESSAGE value="added signin servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="added signin servlet" />
+    <MESSAGE value="some bug fixies" />
+    <option name="LAST_COMMIT_MESSAGE" value="some bug fixies" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java">
@@ -427,13 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DAO/UsersDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DAO/PositionsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -448,72 +545,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DAO/CitiesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#498#499#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DBService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="171" column="20" selection-start-line="171" selection-start-column="20" selection-end-line="171" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/dataSets/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
-            <element signature="e#1427#1428#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/public_html/login.html" />
-    <entry file="file://$PROJECT_DIR$/public_html/signin">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/public_html/signin" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="71" column="95" selection-start-line="71" selection-start-column="83" selection-end-line="71" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="155">
+          <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/services/ADService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="481">
           <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1488#1489#0" expanded="true" />
             <element signature="e#1559#1560#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -525,10 +573,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DAO/CitiesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/DBService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DAO/UsersDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          <folding>
+            <element signature="e#1118#1126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.2.Final/hibernate-core-5.4.2.Final.jar!/org/hibernate/cfg/Configuration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <folding>
+            <element signature="e#0#20188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/dataSets/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dbServices/DBServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="64" column="58" lean-forward="true" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
         </state>
       </provider>
     </entry>

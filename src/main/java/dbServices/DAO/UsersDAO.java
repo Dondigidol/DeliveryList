@@ -1,6 +1,7 @@
 package dbServices.DAO;
 
 import dbServices.dataSets.User;
+import org.eclipse.jetty.io.CyclicTimeout;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
@@ -19,11 +20,21 @@ public class UsersDAO {
     }
 
     public void saveUser(User user) throws HibernateException {
-        session.saveOrUpdate(user);
+        session.save(user);
     }
 
     public User getUserById(long id) throws HibernateException{
         return session.get(User.class, id);
+    }
+
+    public List<User> getUserByLogin(String login) throws HibernateException{
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
+        Root<User> root = criteriaQuery.from(User.class);
+        criteriaQuery.select(root);
+        criteriaQuery.where(criteriaBuilder.like(root.<String>get("userLogin"), "%" + login + "%"));
+        List<User> users = session.createQuery(criteriaQuery).getResultList();
+        return users;
     }
 
     public List<User> getUserByName(String name, String surname) throws HibernateException{

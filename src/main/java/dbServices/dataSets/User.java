@@ -1,9 +1,6 @@
 package dbServices.dataSets;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -11,7 +8,8 @@ import javax.persistence.Table;
 public class User {
 
     @Id
-    @Column(name = "id", unique = true, nullable = false)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
     @Column(name = "login", unique = true, nullable = false)
     private String userLogin;
@@ -28,6 +26,7 @@ public class User {
 
     public User(long userId, String userLogin, String userName, String userSurname, String userPosition){
         this.setUserId(userId);
+        this.setLogin(userLogin);
         this.setUserName(userName);
         this.setUserSurname(userSurname);
         this.setUserPosition(userPosition);
