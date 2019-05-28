@@ -1,13 +1,16 @@
 package interfaces;
 
-import dbServices.dataSets.City;
-import dbServices.dataSets.Delivery;
-import dbServices.dataSets.Position;
-import dbServices.dataSets.User;
+
+import dataSets.City;
+import dataSets.Delivery;
+import dataSets.Position;
+import dataSets.User;
+
+import java.sql.SQLException;
 
 public interface DBService {
 
-    void printConnectionInfo();
+    void printConnectionInfo() throws SQLException;
 
     void saveUser(User user);
 

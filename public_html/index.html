@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Signin page</title>
+    <script type="text/javascript">
+        var ws;
+
+        function init(){
+            ws = new WebSocket("ws://localhost:8080/signin");
+
+            ws.onopen = function(event){
+            }
+
+            ws.onmessage = function(event){
+                var info = document.getElementById("info");
+                info.value = event.data;
+            }
+
+            ws.onclose = function(event){
+            }
+        };
+
+        function Authorization(){
+            var login = document.getElementById("login");
+            var password = document.getElementById("password");
+            ws.send(login.value+ ":" + password.value);
+        }
+
+
+
+
+    </script>
+
+</head>
+<body onload="init();">
+<p>Вход в управление доставкой</p>
+<input type="text" id="login"/>
+<input type="password" id="password"/>
+<input type="button" id="btnSignin" value="Войти" onclick="Authorization();"/>
+<input type="text" id="info" name="info"/>
+</body>
+</html>

@@ -1,10 +1,8 @@
-package main;
-
 import dbServices.DBServiceImpl;
-import dbServices.dataSets.City;
-import dbServices.dataSets.Delivery;
-import dbServices.dataSets.Position;
-import dbServices.dataSets.User;
+import dataSets.City;
+import dataSets.Delivery;
+import dataSets.Position;
+import dataSets.User;
 import interfaces.DBService;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
@@ -12,7 +10,8 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import servlets.LoginServlet;
+import servlets.SignInServlet;
+
 
 public class Main {
 
@@ -50,7 +49,7 @@ public class Main {
         }
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
-        contextHandler.addServlet(new ServletHolder(new LoginServlet(dbService)), "/signin.html");
+        contextHandler.addServlet(new ServletHolder(new SignInServlet()), "/signin");
 
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setResourceBase("public_html");

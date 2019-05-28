@@ -1,6 +1,6 @@
 package dbServices.DAO;
 
-import dbServices.dataSets.Position;
+import dataSets.Position;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 

@@ -1,7 +1,7 @@
 package dbServices.DAO;
 
 
-import dbServices.dataSets.Delivery;
+import dataSets.Delivery;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 

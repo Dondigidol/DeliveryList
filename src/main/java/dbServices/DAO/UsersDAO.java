@@ -1,16 +1,13 @@
 package dbServices.DAO;
 
-import dbServices.dataSets.User;
-import org.eclipse.jetty.io.CyclicTimeout;
+import dataSets.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class UsersDAO {
     private Session session;
@@ -57,13 +54,8 @@ public class UsersDAO {
         return users;
     }
 
-    public boolean deleteUser(long id) throws HibernateException{
-        try {
-            session.delete(session.get(User.class, id));
-            return true;
-        } catch (Exception e){
-            return false;
-        }
+    public void deleteUser(long id) throws HibernateException {
+        session.delete(session.get(User.class, id));
     }
 
 

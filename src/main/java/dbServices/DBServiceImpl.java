@@ -4,10 +4,10 @@ import dbServices.DAO.CitiesDAO;
 import dbServices.DAO.DeliveriesDAO;
 import dbServices.DAO.PositionsDAO;
 import dbServices.DAO.UsersDAO;
-import dbServices.dataSets.City;
-import dbServices.dataSets.Delivery;
-import dbServices.dataSets.Position;
-import dbServices.dataSets.User;
+import dataSets.City;
+import dataSets.Delivery;
+import dataSets.Position;
+import dataSets.User;
 import interfaces.DBService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -18,6 +18,7 @@ import org.hibernate.internal.SessionFactoryImpl;
 import org.hibernate.service.ServiceRegistry;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -59,17 +60,13 @@ public class DBServiceImpl implements DBService {
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
-    public void printConnectionInfo(){
-        try{
-            SessionFactoryImpl sessionFactoryImpl = (SessionFactoryImpl) sessionFactory;
-            Connection connection = sessionFactoryImpl.getJdbcServices().getBootstrapJdbcConnectionAccess().obtainConnection();
-            System.out.println("DB name: " + connection.getMetaData().getDatabaseProductName());
-            System.out.println("DB version: " + connection.getMetaData().getDatabaseProductVersion());
-            System.out.println("Driver: " + connection.getMetaData().getDriverVersion());
-            System.out.println("Autocommit: " + connection.getAutoCommit());
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+    public void printConnectionInfo() throws SQLException {
+        SessionFactoryImpl sessionFactoryImpl = (SessionFactoryImpl) sessionFactory;
+        Connection connection = sessionFactoryImpl.getJdbcServices().getBootstrapJdbcConnectionAccess().obtainConnection();
+        System.out.println("DB name: " + connection.getMetaData().getDatabaseProductName());
+        System.out.println("DB version: " + connection.getMetaData().getDatabaseProductVersion());
+        System.out.println("Driver: " + connection.getMetaData().getDriverVersion());
+        System.out.println("Autocommit: " + connection.getAutoCommit());
     }
 
     public void saveUser(User user){
@@ -108,7 +105,7 @@ public class DBServiceImpl implements DBService {
         session.close();
     }
 
-    public User getUserById(long id){
+    public User getUserById(long id) throws NullPointerException {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         UsersDAO dao = new UsersDAO(session);
@@ -118,7 +115,7 @@ public class DBServiceImpl implements DBService {
         return user;
     }
 
-    public List<User> getUserByName(String name, String surname){
+    public List<User> getUserByName(String name, String surname) throws NullPointerException {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         UsersDAO dao = new UsersDAO(session);
@@ -128,17 +125,16 @@ public class DBServiceImpl implements DBService {
         return users;
     }
 
-    public boolean deleteUserById(long userId){
+    public void deleteUserById(long userId) {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         UsersDAO dao = new UsersDAO(session);
-        boolean isDeleted = dao.deleteUser(userId);
+        dao.deleteUser(userId);
         ts.commit();
         session.close();
-        return isDeleted;
     }
 
-    public List<Delivery> getDelivery(Delivery delivery){
+    public List<Delivery> getDelivery(Delivery delivery) throws NullPointerException {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         DeliveriesDAO dao = new DeliveriesDAO(session);
@@ -151,7 +147,7 @@ public class DBServiceImpl implements DBService {
         return deliveries;
     }
 
-    public List<Position> getPosition(String positionName){
+    public List<Position> getPosition(String positionName) throws NullPointerException {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         PositionsDAO dao = new PositionsDAO(session);
@@ -179,7 +175,7 @@ public class DBServiceImpl implements DBService {
         return getCity("");
     }
 
-    public List<User> getUserByPosition(String positionName){
+    public List<User> getUserByPosition(String positionName) throws NullPointerException {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         UsersDAO dao = new UsersDAO(session);
