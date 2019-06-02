@@ -10,7 +10,7 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import servlets.SignInServlet;
+import servlets.AuthorizationServlet;
 
 
 public class Main {
@@ -49,7 +49,7 @@ public class Main {
         }
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
-        contextHandler.addServlet(new ServletHolder(new SignInServlet()), "/signin");
+        contextHandler.addServlet(new ServletHolder(new AuthorizationServlet()), "/signin");
 
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setResourceBase("public_html");

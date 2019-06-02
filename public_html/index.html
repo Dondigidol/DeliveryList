@@ -13,7 +13,16 @@
 
             ws.onmessage = function(event){
                 var info = document.getElementById("info");
-                info.value = event.data;
+                if (event.data=="OK"){
+                    document.location="deliveries.html";
+                } else {
+                    info.value = event.data;
+                }
+            }
+
+            ws.onerror = function(event){
+                var info = document.getElementById("info");
+                info.value=event.data;
             }
 
             ws.onclose = function(event){

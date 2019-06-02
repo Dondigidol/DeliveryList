@@ -31,10 +31,6 @@ public class DBServiceImpl implements DBService {
     public DBServiceImpl(){
         Configuration configuration = getMySqlConfiguration();
         sessionFactory = createSessionFactory(configuration);
-//        Session session = sessionFactory.openSession();
-//        UsersDAO usersDAO = new UsersDAO(session);
-//        PositionsDAO positionsDAO = new PositionsDAO(session);
-//        DeliveriesDAO deliveriesDAO = new DeliveriesDAO(session);
     }
 
     private Configuration getMySqlConfiguration(){

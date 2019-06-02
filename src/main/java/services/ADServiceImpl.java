@@ -16,8 +16,8 @@ import java.util.Hashtable;
 public class ADServiceImpl implements ADService {
     private static DirContext ldapContext;
 
-    private static String login;
-    private static String password;
+    private String login;
+    private String password;
 
     public ADServiceImpl(String login, String password) {
         try {
@@ -28,6 +28,19 @@ public class ADServiceImpl implements ADService {
             System.out.println(e.getMessage());
         }
     }
+
+    public ADServiceImpl() {
+
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
     public void serviceInitialization() throws Exception {
         Hashtable<String, String> ldapEnv = new Hashtable<String, String>();
