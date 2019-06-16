@@ -4,7 +4,6 @@ import interfaces.ADService;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
 import services.ADServiceImpl;
-
 import java.io.IOException;
 
 @WebSocket
@@ -35,7 +34,6 @@ public class AuthorizationSocket {
             System.out.println(e.getLocalizedMessage());
             sendMessage("Login or password is wrong!");
         }
-
     }
 
     @OnWebSocketClose
@@ -49,7 +47,6 @@ public class AuthorizationSocket {
         } catch (IOException e) {
             System.out.println(e.getLocalizedMessage());
         }
-
     }
 
     @OnWebSocketError

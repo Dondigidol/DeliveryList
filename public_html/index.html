@@ -3,7 +3,7 @@
     <meta charset="UTF-8"/>
     <title>Signin page</title>
     <script type="text/javascript">
-        var ws;
+<!-- var ws;
 
         function init(){
             ws = new WebSocket("ws://localhost:8080/signin");
@@ -37,15 +37,17 @@
 
 
 
-
+-->
     </script>
 
 </head>
-<body onload="init();">
+<body>
 <p>Вход в управление доставкой</p>
-<input type="text" id="login"/>
-<input type="password" id="password"/>
-<input type="button" id="btnSignin" value="Войти" onclick="Authorization();"/>
-<input type="text" id="info" name="info"/>
+<form action="" method="post">
+    <input type="text" id="login" name="login"/>
+    <input type="password" id="password" name="password"/>
+    <input type="submit" id="btnSignin" value="Войти"/>
+    <input type="text" id="info" name="info"/>
+</form>
 </body>
 </html>

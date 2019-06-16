@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/deliveries.css"/>
     <meta charset="UTF-8">
     <title>Deliveries</title>
+    <script type="text/javascript">
+        function init(){
+            ws = new WebSocket("ws://localhost:8080/deliveries");
+
+            ws.onopen = function(event){
+            }
+
+
+            ws.onmessage = function(event){
+            }
+
+            ws.onerror = function(event){
+            }
+
+            ws.onclose = function(event){
+            }
+        }
+
+    </script>
 </head>
 <body>
 <p>Deliveries page</p>
+<div id="body">
+    <div id="table">
+        <div id="table_header" class="table">
+            <div class="date_field">Дата</div>
+            <div class="order_field">Номер заказа</div>
+            <div class="client_field">Клиент</div>
+            <div class="client_price_filed">Цена для клиента</div>
+            <div class="price_field">Цена</div>
+            <div class="city_field">Город</div>
+            <div class="comment_field">Комментарий</div>
+        </div>
+        <div id="table_content">
+
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

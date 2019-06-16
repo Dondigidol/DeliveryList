@@ -2,6 +2,8 @@ package interfaces;
 
 import dataSets.User;
 
+import javax.naming.NamingException;
+
 public interface ADService {
     User getUserInfo() throws Exception;
 

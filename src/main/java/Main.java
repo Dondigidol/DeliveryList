@@ -49,7 +49,7 @@ public class Main {
         }
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
-        contextHandler.addServlet(new ServletHolder(new AuthorizationServlet()), "/signin");
+        contextHandler.addServlet(new ServletHolder(new AuthorizationServlet()), "/index.html");
 
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setResourceBase("public_html");

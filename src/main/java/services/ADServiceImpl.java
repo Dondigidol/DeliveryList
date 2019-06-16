@@ -20,13 +20,8 @@ public class ADServiceImpl implements ADService {
     private String password;
 
     public ADServiceImpl(String login, String password) {
-        try {
-            this.login = login;
-            this.password = password;
-            serviceInitialization();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        this.login = login;
+        this.password = password;
     }
 
     public ADServiceImpl() {
