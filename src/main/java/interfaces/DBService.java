@@ -7,6 +7,7 @@ import dataSets.Position;
 import dataSets.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface DBService {
 
@@ -19,6 +20,8 @@ public interface DBService {
     void savePosition(Position position);
 
     void saveCity(City city);
+
+    List<Delivery> getDeliveries();
 
 
 

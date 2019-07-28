@@ -130,17 +130,24 @@ public class DBServiceImpl implements DBService {
         session.close();
     }
 
-    public List<Delivery> getDelivery(Delivery delivery) throws NullPointerException {
+    public Delivery getDelivery(Delivery delivery) throws NullPointerException {
         Session session = sessionFactory.openSession();
         Transaction ts = session.beginTransaction();
         DeliveriesDAO dao = new DeliveriesDAO(session);
-        System.out.println(delivery);
         delivery.prepareSearch();
-        System.out.println(delivery);
-        List<Delivery> deliveries = dao.getDelivery(delivery);
+        Delivery result = dao.getDelivery(delivery);
         ts.commit();
         session.close();
-        return deliveries;
+        return result;
+    }
+
+    public List<Delivery> getDeliveries() {
+        Session session = sessionFactory.openSession();
+        Transaction ts = session.beginTransaction();
+        DeliveriesDAO dao = new DeliveriesDAO(session);
+        List<Delivery> result = dao.getDeliveries();
+        session.close();
+        return result;
     }
 
     public List<Position> getPosition(String positionName) throws NullPointerException {

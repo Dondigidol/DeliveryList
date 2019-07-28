@@ -23,7 +23,6 @@ public class AuthorizationServlet extends HttpServlet {
         try {
             ADService adService = new ADServiceImpl(login, password);
             adService.serviceInitialization();
-            response.sendRedirect("deliveries.html");
         } catch (Exception e) {
             System.out.println(e.getLocalizedMessage());
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);

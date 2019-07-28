@@ -4,13 +4,13 @@ import dataSets.Delivery;
 import dataSets.Position;
 import dataSets.User;
 import interfaces.DBService;
+import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
-import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.servlet.ServletHolder;
-import servlets.AuthorizationServlet;
+import org.eclipse.jetty.util.resource.ResourceCollection;
+import org.eclipse.jetty.webapp.WebAppContext;
 
 
 public class Main {
@@ -47,21 +47,5 @@ public class Main {
             city.setCityName("City " + i);
             dbService.saveCity(city);
         }
-        ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.SESSIONS);
-
-        contextHandler.addServlet(new ServletHolder(new AuthorizationServlet()), "/index.html");
-
-        ResourceHandler resourceHandler = new ResourceHandler();
-        resourceHandler.setResourceBase("public_html");
-
-        HandlerList handlerList = new HandlerList();
-        handlerList.setHandlers(new Handler[]{resourceHandler, contextHandler});
-
-        Server server = new Server (8080);
-        server.setHandler(handlerList);
-
-        server.start();
-        System.out.println("Server started!");
-        server.join();
     }
 }
